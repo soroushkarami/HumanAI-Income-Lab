@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+
+    <h2>Create Account</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <!--
+         .as_p is a builtin Django gives for rendering all
+         the fields in a form as HTML wrapped in <p> tags. ie:
+         <p>
+            <label for="id_username">Username:</label>
+            <input type="text" name="username" required id="id_username">
+        </p>
+
+        <p>
+            <label for="id_password1">Password:</label>
+            <input type="password" name="password1" required id="id_password1">
+        </p>
+
+        <p>
+            <label for="id_password2">Password confirmation:</label>
+            <input type="password" name="password2" required id="id_password2">
+        </p>
+         -->
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p>
+        Already have an account?
+        <a href="{% url 'login' %}">Login here</a>
+    </p>
+
+</body>
+</html>
